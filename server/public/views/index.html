@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Magic</title>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/clientapp.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <h1>&Mu;&mu; Angular!</h1>
+    <div ng-controller="IndexController">
+      <button ng-click="addPerson()">Add Connor!</button>
+      <div ng-repeat="scoobydoo in people" class="hello">
+        <p>{{scoobydoo.name}}</p>
+        <p>{{scoobydoo.location}}</p>
+        <p ng-show="scoobydoo.number <= 4">{{scoobydoo.number}}</p>
+      </div>
+    </div>
+
+</body>
+</html>

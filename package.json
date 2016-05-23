@@ -1,0 +1,25 @@
+{
+  "name": "prime-angular-lectures",
+  "version": "1.0.0",
+  "description": "Lectures covering Angular. See Branches for demo code for each lecture/topic.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdszafranski/prime-angular-lectures.git"
+  },
+  "author": "kris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdszafranski/prime-angular-lectures/issues"
+  },
+  "homepage": "https://github.com/kdszafranski/prime-angular-lectures#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4"
+  }
+}
