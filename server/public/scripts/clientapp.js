@@ -1,6 +1,6 @@
 var application = angular.module('myApp', []);
 
-application.controller('IndexController', ['$scope', function($scope) {
+application.controller('IndexController', ['$scope', '$http', function($scope, $http) {
   console.log('angular controller!');
 
   $scope.kris = {
@@ -25,5 +25,34 @@ application.controller('IndexController', ['$scope', function($scope) {
       number: 5
     });
   };
+
+  $scope.getStuff = function() {
+    $http({
+      method: 'GET',
+      url: '/stuff'
+    }).then(function(res) {
+      var data = res.data;
+      console.log('async response: ', res);
+    });
+  };
+
+  $scope.sendStuff = function(num) {
+    $http({
+      method: 'POST', // PUT, DELETE
+      url: '/stuff/' + num,
+      data: {number: num}
+    }).then(function(response) {
+      console.log('POST response: ', response);
+      $http({
+        method: 'GET',
+        url: '/stuff'
+      }).then(function(res) {
+        var data = res.data;
+        console.log('GET response: ', res);
+        $scope.addPerson();
+      });
+    });
+  }
+
 
 }]);

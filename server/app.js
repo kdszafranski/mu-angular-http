@@ -10,6 +10,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
+app.get('/stuff', function(req, res) {
+  res.json({ message: 'hello world!'});
+});
+
+app.post('/stuff/:num', function(req, res) {
+  var total = {
+    urlNum : req.params.num,
+    bodyNum : req.body.number
+  };
+  res.send(total);
+});
 
 // Handle index file separately
 app.get('/', function(req, res) {
